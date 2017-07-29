@@ -51,13 +51,13 @@ class MainScreen : View() {
             maxWidth = 1200.px.value
             addClass(mainScreen)
             row("webp quality(0~100)") {
-                quality = textfield() {
+                quality = textfield {
                     text = "75"
                     bind(parameter.qualityProperty())
                 }
             }
             row("webp speed(frames/s)") {
-                speed = textfield() {
+                speed = textfield {
                     text = "30"
                     bind(parameter.speedProperty())
                 }
@@ -237,7 +237,7 @@ class MainScreen : View() {
             alert(Alert.AlertType.ERROR, ERROR, "quality must be digits!", ButtonType.OK)
             return false
         }
-        if (parameter.quality.toInt() in 0..100) {
+        if (parameter.quality.toInt() !in 1..100) {
             alert(Alert.AlertType.ERROR, ERROR, "quality must in the range(0,100]!", ButtonType.OK)
             return false
         }
@@ -265,7 +265,8 @@ class MainScreen : View() {
                         projectDir,
                         parameter.quality.toInt(),
                         parameter.fileSelected.absolutePath,
-                        tmpName)).apply { this.waitFor() }
+                        tmpName)).apply { waitFor() }
+
             } ui { process ->
                 when (process.exitValue()) {
                     0 -> alert(Alert.AlertType.INFORMATION, "", tmpName, ButtonType.OK)
@@ -280,6 +281,9 @@ class MainScreen : View() {
     }
 
     fun processMultiFiles() {
+        if (!preProcessParameter()) {
+            return
+        }
         runAsync {
             val runTime = Runtime.getRuntime()
             var files = parameter.fileSelected.listFiles { pathname ->
@@ -320,7 +324,6 @@ class MainScreen : View() {
                         this.waitFor()
                         files.forEach { it.delete() }
                     }
-
         } ui { process ->
             if (process == null) {
                 alert(Alert.AlertType.ERROR, ERROR, "selected files is empty", ButtonType.OK)
@@ -343,9 +346,6 @@ class MainScreen : View() {
                     alert(Alert.AlertType.ERROR, ERROR, str, ButtonType.OK)
                 }
             }
-
         }
     }
-
-
 }
