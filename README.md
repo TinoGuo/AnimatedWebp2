@@ -2,6 +2,8 @@
 
 ## 中文版
 
+[代码原理介绍](http://www.jianshu.com/p/8dc745523e03)
+
 把单张或者多张png序列图转成webp动态图。
 
 如果有什么交流建议，可以在Issues留下问题
