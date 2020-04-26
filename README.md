@@ -1,16 +1,15 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 # AnimatedWebp
 
 ## 中文版
 
-[代码原理介绍](http://www.jianshu.com/p/8dc745523e03)
+该项目不再维护，为了有更好的体验，请使用[iToolsBox](https://github.com/TinoGuo/iToolsBox)
 
-把单张或者多张png序列图转成webp动态图。
-
-如果有什么交流建议，可以在Issues留下问题
+[代码原理介绍](https://tinocheng.app/post/%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E4%B9%8Bwebp%E7%A4%BC%E7%89%A9%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)
 
 ## English Version
 
-If you have any question, please leave message in issues.
+this library is depracted, please move to [iToolsBox](https://github.com/TinoGuo/iToolsBox) for better experience.
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/_UEmh1qkc3Q/0.jpg)](https://youtu.be/_UEmh1qkc3Q "AnimatedWebp")
 
