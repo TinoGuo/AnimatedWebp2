@@ -1,5 +1,4 @@
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
-# AnimatedWebp
+![No Maintenance Intended](http://unmaintained.tech/badge.svg)
 
 ## 中文版
 
